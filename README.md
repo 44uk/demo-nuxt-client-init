@@ -8,7 +8,12 @@ NuxtアプリケーションをSPAモードでのビルドに、こちらのモ�
 
 モジュール内部の実装にて`setTimeout`で非同期実行されるため(?)、`mounted`より後のタイミングでの実行になっている様子。
 
-この実装で正しいのかどうかまでが自分には判断できないが、`created`よりも前の時点での初期化という目的を達成するにはこの実装が不要だった。
+* [Delay exec nuxtClientInit · potato4d/nuxt\-client\-init\-module@59989ef](https://github.com/potato4d/nuxt-client-init-module/commit/59989ef37176586aa7ffec0ede0c64cf5aacb8fa#diff-e5071b7e59a73723f3f847f15c430645)
+
+コミットを遡ると途中でこの修正が施された様子でした。
+
+この実装で正しいのかは自分には判断できませんでしたが、
+`created`よりも前の時点での初期化という目的を達成するにはこの実装が不要でした。
 
 このリポジトリはその実行順序の検証用です。
 

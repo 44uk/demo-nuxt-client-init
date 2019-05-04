@@ -1,5 +1,11 @@
 import pkg from './package'
 
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+  router: {
+    base: '/demo-nuxt-client-init/'
+  }
+} : {}
+
 export default {
   mode: 'spa',
 
@@ -17,6 +23,8 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+
+  ...routerBase,
 
   /*
   ** Customize the progress-bar color

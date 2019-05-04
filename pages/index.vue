@@ -30,7 +30,13 @@ import Logo from '~/components/Logo.vue'
 export default {
   components: {
     Logo
-  }
+  },
+  created() {
+    console.log('created')
+  },
+  mounted() {
+    console.log('mounted')
+  },
 }
 </script>
 
